@@ -24,10 +24,9 @@
         <div class="container">
             <h1>Edit Package Items</h1>
 
-           
-           
-           <button class='add-btn' onclick="document.getElementById('id02').style.display='block'; document.getElementById('item_pack').value="<?php echo $_GET['id']; ?>"" >Add Item</button>
-           
+
+<button class='add-btn' onclick="document.getElementById('id02').style.display='block'; document.getElementById('item_pack').value="<?php echo $_GET['id']; ?>"" >Add Item</button>
+
 
             <table class="package-table">
                 <tr class="table-heading">

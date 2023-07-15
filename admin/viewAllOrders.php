@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php 
-     require_once('../login/adminSession.php');
+    require_once('../login/adminSession.php');
     
     require_once('../db.php');
     $db = new DBConnection;
