@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    display: flex;
+}
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+table{
+    margin-left: 15px;
+    /* margin-right: 5px; */
+}
+
+th{
+    background-color: rgb(206, 77, 60);
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+}
+td{
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+
+.cancel-btn{
+    background-color: rgb(236, 66, 66);
+    border-radius: 5px;
+    color: white;
+    border: 1px  solid red;
+    padding: 2px;
+    margin: 10px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.cancel-btn:hover{
+    background-color: white;
+    color: rgb(236, 66, 66);
+    border: 1px  solid red;
+}
+.edit-btn{
+    background-color: rgb(66, 97, 236);
+    border-radius: 5px;
+    color: white;
+    border: 1px  solid blue;
+    padding: 2px;
+    margin: 10px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.edit-btn:hover{
+    background-color: white;
+    color: rgb(66, 97, 236);
+    border: 1px  solid blueviolet;
+}
+

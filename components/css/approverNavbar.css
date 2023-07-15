@@ -1,0 +1,50 @@
+:root{
+    --greenclr: #4b0d3b;
+    --lavender: rgb(206, 77, 60);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    width:20%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--greenclr);
+}
+ ul{
+    list-style: none;
+ }
+ h2{
+    color: white;
+    margin-top: 45px;
+    margin-bottom: 40px;
+ }
+ .menu-items{
+    margin-bottom: 30px;
+ }
+ .menu a{
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: 0.3s;
+    color: white;
+    
+    
+ }
+ .menu-items li{ 
+    padding: 20px;
+    letter-spacing: 4px;
+    font-size: 20px;
+    
+ }
+ .menu a:hover{
+    color: black;
+    background-color: white;
+ }
+ .profilename{
+    position: fixed;
+    bottom: 0;
+ }

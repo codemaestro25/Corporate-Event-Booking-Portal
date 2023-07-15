@@ -1,0 +1,119 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.main{
+    display: flex;
+}
+.heading{
+    color: black ;
+}
+.container{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.two-element{
+    width: 300px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: [label] auto [input] 1fr;
+    margin-left: 20px;
+    
+}
+input{
+    grid-column: input;
+    align-items: center;
+}
+label{
+    grid-column: label;
+    align-items: center;
+}
+
+.form{
+    margin-top: 40px;
+}
+.food-items{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: [label] auto [input] 1fr;
+}
+.packages{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.pack_container{
+    margin: 20px;
+    width: 200px;
+    border: 2px solid;
+    border-radius: 8px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    transition: 0.3s;   
+    position: relative;
+}
+.pack_container:hover{
+    scale: 1.05;
+}
+
+#bronze{
+    background-color:rgb(223, 114, 87);
+}
+#silver{
+    background-color:rgb(180, 180, 180);
+}
+#gold{
+    background-color:rgb(233, 201, 57);
+}
+
+.package-section{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+#submit-btn{
+    color: black;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    transition: 0.3s;
+    align-self: center;
+    margin-bottom: 50px;
+}
+#submit-btn:hover{
+    background-color:teal;
+    color: white;
+}
+#fphead{
+    font-weight: bold;
+    margin-left: 20px;
+    font-size: 1.8rem;
+}
+
+.pack-head{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    font-style:italic;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+h4{
+    margin-bottom: 3px;
+    margin-top: 10px;
+    
+}
+.price{
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    position: absolute;
+    bottom: 0;
+    margin-top: 30px;
+    
+}

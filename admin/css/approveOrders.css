@@ -1,0 +1,18 @@
+.approve-btn{
+    background-color: rgb(5, 205, 22);
+    border-radius: 5px;
+    color: white;
+    border: 1px  solid greenyellow;
+    padding: 2px;
+    margin: 10px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.approve-btn:hover{
+    background-color: white;
+    color: rgb(5, 205, 22);
+    border: 1px  solid greenyellow;
+}
+table{
+    margin-left: 10px !important;
+}
