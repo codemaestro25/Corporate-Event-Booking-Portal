@@ -41,7 +41,7 @@
             </tr>
             
             <?php
-            $sql = "select * from orders where o_status = 'placed';";
+            $sql = "select * from orders where o_status = 'placed' and gm = 'y';";
             $result = mysqli_query($conn , $sql);
             $num = mysqli_num_rows($result);
             if($num>0){
