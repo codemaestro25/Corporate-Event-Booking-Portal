@@ -7,7 +7,7 @@
     <title>HR Approval</title>
     <link rel="stylesheet" href="./css/approver.css">
     <link rel="stylesheet" href="../components/css/approverNavbar.css">
-    <link rel="stylesheet" href="../admin/css/approveOrders.css">
+    <link rel="stylesheet" href="./css/approveOrders.css">
 </head>
 <body>
     <?php 
@@ -43,7 +43,7 @@
             </tr>
             
             <?php
-            $sql = "select * from orders where com = 'y';";
+            $sql = "select * from orders where com = 'y' and hr != 'y';";
             $result = mysqli_query($conn , $sql);
             $num = mysqli_num_rows($result);
             if($num>0){
@@ -74,7 +74,7 @@
 
 	<div id="id03" class="modal">
 		<span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">×</span>
-		<form class="modal-content animate" method="post" action="../actions/reject.php">
+		<form class="modal-content animate" method="post" action="./actions/reject.php">
 			<div class="container">
 
 				<label><b>Reason for rejection</b></label>

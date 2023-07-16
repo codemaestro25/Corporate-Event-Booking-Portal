@@ -6,19 +6,17 @@
     <title>View Order</title>
     <link rel="stylesheet" href="../pages/css/vieworder.css">
     <link rel="stylesheet" href="./css/approveOrders.css">
-    <link rel="stylesheet" href="../components/css/adminNavbar.css">
+    <link rel="stylesheet" href="../components/css/approverNavbar.css">
 </head>
 <body>
     <?php 
-     require_once('../login/adminSession.php');
-    
     require_once('../db.php');
     $db = new DBConnection;
     $conn = $db->conn;
     ?>
     <div class="main">
     <?php 
-    include ('../components/adminNavbar.php');
+    include ('../components/approverNavbar.php');
     ?>
     <div class="container">
         <h2>Your Canteen Event Orders</h2>
@@ -36,7 +34,6 @@
                 <th>Event Time</th>
                 <th>Status</th>
                 <th>Remark</th>
-
             </tr>
             
             <?php

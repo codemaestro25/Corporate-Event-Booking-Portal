@@ -64,17 +64,6 @@
                             <div class="pack_container" class='pack-radio' id="bronze">
                                 <input type="radio" name="package" value="Bronze" class="radio-btn" required>
                                 <label for="package" class="pack-head">BRONZE </label>
-                                <h4>Starter</h4>
-                                <ul class="starters">
-                                    <?php 
-                                $sql = "select it_name from food_items where bronze = 'y' and it_category = 'S'";
-                                $result = mysqli_query($conn, $sql);
-                                while($row = mysqli_fetch_array($result)){
-                                    echo ('<li>'.$row[0].'</li>');
-                                    }
-                                ?>
-
-                                </ul>
                                 <h4>Main Course</h4>
                                 <ul class="main-course">
                                 <?php 
@@ -86,10 +75,10 @@
                                 ?>
 
                                 </ul>
-                                <h4>Deserts</h4>
-                                <ul class="deserts">
-                                <?php 
-                                $sql = "select it_name from food_items where bronze = 'y' and it_category = 'D'";
+                                <h4>Starters & Sides</h4>
+                                <ul class="starters">
+                                    <?php 
+                                $sql = "select it_name from food_items where bronze = 'y' and it_category = 'S'";
                                 $result = mysqli_query($conn, $sql);
                                 while($row = mysqli_fetch_array($result)){
                                     echo ('<li>'.$row[0].'</li>');
@@ -97,22 +86,14 @@
                                 ?>
 
                                 </ul>
+                                
+                        
                                 <div class="price"><?php echo ("Rs. ".$arr[0]." /-"); ?></div>
                             </div>
                             <div class="pack_container" id="silver">
                                 <input type="radio" name="package" class='pack-radio' value="Silver" class="radio-btn" required>
                                 <label for="package" class="pack-head">SILVER </label>
-                                <h4>Starter</h4>
-                                <ul class="starters">
-                                    <?php 
-                                $sql = "select it_name from food_items where silver = 'y' and it_category = 'S'";
-                                $result = mysqli_query($conn, $sql);
-                                while($row = mysqli_fetch_array($result)){
-                                    echo ('<li>'.$row[0].'</li>');
-                                    }
-                                ?>
-
-                                </ul>
+                                
                                 <h4>Main Course</h4>
                                 <ul class="main-course">
                                 <?php 
@@ -124,6 +105,18 @@
                                 ?>
 
                                 </ul>
+                                <h4>Starters & Sides</h4>
+                                <ul class="starters">
+                                    <?php 
+                                $sql = "select it_name from food_items where silver = 'y' and it_category = 'S'";
+                                $result = mysqli_query($conn, $sql);
+                                while($row = mysqli_fetch_array($result)){
+                                    echo ('<li>'.$row[0].'</li>');
+                                    }
+                                ?>
+
+                                </ul>
+                                
                                 <h4>Deserts</h4>
                                 <ul class="deserts">
                                 <?php 
@@ -141,17 +134,6 @@
                             <div class="pack_container" id="gold">
                                 <input type="radio" class='pack-radio' name="package" value="Gold" class="radio-btn" required>
                                 <label for="package" class="pack-head">GOLD </label>
-                                <h4>Starter</h4>
-                                <ul class="starters">
-                                    <?php 
-                                $sql = "select it_name from food_items where gold = 'y' and it_category = 'S'";
-                                $result = mysqli_query($conn, $sql);
-                                while($row = mysqli_fetch_array($result)){
-                                    echo ('<li>'.$row[0].'</li>');
-                                    }
-                                ?>
-
-                                </ul>
                                 <h4>Main Course</h4>
                                 <ul class="main-course">
                                 <?php 
@@ -163,6 +145,18 @@
                                 ?>
 
                                 </ul>
+                                <h4>Starters & Sides</h4>
+                                <ul class="starters">
+                                    <?php 
+                                $sql = "select it_name from food_items where gold = 'y' and it_category = 'S'";
+                                $result = mysqli_query($conn, $sql);
+                                while($row = mysqli_fetch_array($result)){
+                                    echo ('<li>'.$row[0].'</li>');
+                                    }
+                                ?>
+
+                                </ul>
+                        
                                 <h4>Deserts</h4>
                                 <ul class="deserts">
                                 <?php 
@@ -176,6 +170,46 @@
                                 </ul>
                                 
                                 <div class="price"><?php echo ("Rs. ".$arr[2]." /-"); ?></div>
+                            </div>
+                            <div class="pack_container" id="plat">
+                            <input type="radio" class='pack-radio' name="package" value="Platinum" class="radio-btn" required>
+                                <label for="package" class="pack-head">PLATINUM </label>
+                                <h4>Main Course</h4>
+                                <ul class="main-course">
+                                <?php 
+                                $sql = "select it_name from food_items where platinum = 'y' and it_category = 'M'";
+                                $result = mysqli_query($conn, $sql);
+                                while($row = mysqli_fetch_array($result)){
+                                    echo ('<li>'.$row[0].'</li>');
+                                    }
+                                ?>
+
+                                </ul>
+                                <h4>Starters & Sides</h4>
+                                <ul class="starters">
+                                    <?php 
+                                $sql = "select it_name from food_items where platinum = 'y' and it_category = 'S'";
+                                $result = mysqli_query($conn, $sql);
+                                while($row = mysqli_fetch_array($result)){
+                                    echo ('<li>'.$row[0].'</li>');
+                                    }
+                                ?>
+
+                                </ul>
+                        
+                                <h4>Deserts</h4>
+                                <ul class="deserts">
+                                <?php 
+                                $sql = "select it_name from food_items where platinum = 'y' and it_category = 'D'";
+                                $result = mysqli_query($conn, $sql);
+                                while($row = mysqli_fetch_array($result)){
+                                    echo ('<li>'.$row[0].'</li>');
+                                    }
+                                ?>
+
+                                </ul>
+                                
+                                <div class="price"><?php echo ("Rs. ".$arr[3]." /-"); ?></div>
                             </div>
                                    
                         </div>

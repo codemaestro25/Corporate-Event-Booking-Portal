@@ -42,7 +42,7 @@
                     header("Location: ../approvers/gm.php?id=".$role."");
                     break;
                 case 'Canteen_Operator':
-                    header("Location: ../admin/approveOrders.php");
+                    header("Location: ../approvers/Canteen_Operator/approveOrders.php");
                     break;
             }
             

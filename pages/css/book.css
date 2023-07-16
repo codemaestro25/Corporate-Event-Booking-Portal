@@ -2,7 +2,6 @@
     margin:0;
     padding: 0;
 }
-
 .main{
     display: flex;
 }
@@ -26,7 +25,7 @@
 input{
     grid-column: input;
     align-items: center;
-}
+}   
 label{
     grid-column: label;
     align-items: center;
@@ -43,7 +42,8 @@ label{
 .packages{
     margin-top: 10px;
     display: flex;
-    justify-content: space-between;
+  flex-wrap: wrap; 
+
 }
 .pack_container{
     margin: 20px;
@@ -59,16 +59,22 @@ label{
     scale: 1.05;
 }
 
-#bronze{
-    background-color:rgb(223, 114, 87);
-}
-#silver{
-    background-color:rgb(180, 180, 180);
-}
-#gold{
-    background-color:rgb(233, 201, 57);
-}
-
+    #bronze{
+    /*     background-color:rgb(223, 114, 87); */
+        background-color:#CD7F32   
+    }
+    #silver{
+    /*     background-color:rgb(180, 180, 180); */
+        background-color:#dcdcdc;
+    }
+    #gold{
+    /*     background-color:rgb(233, 201, 57); */
+        background-color:#FFD700;
+    }
+    #plat{
+    /*     background-color:#ADD8E6 */
+        background-color:#7CB9E8
+    }
 .package-section{
     margin-top: 50px;
     display: flex;
@@ -117,3 +123,4 @@ h4{
     margin-top: 30px;
     
 }
+

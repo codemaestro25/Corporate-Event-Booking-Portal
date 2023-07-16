@@ -13,7 +13,7 @@ $sql = "update food_items set it_name = '".$updated_item."' where it_id = '".$it
 
 if(mysqli_query($conn, $sql)){
     echo "<script>alert('Item Edited successfully')</script>";
-    header('Location:http://localhost/canteen/admin/editPackage/packageInfo.php');
+    header('Location:http://localhost/canteen/approvers/Canteen_Operator/editPackage/packageInfo.php');
 }
 else{
     echo "<script>alert('Error: Cannot update item')</script>";
