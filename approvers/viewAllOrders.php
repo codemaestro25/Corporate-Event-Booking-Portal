@@ -10,6 +10,11 @@
 </head>
 <body>
     <?php 
+<<<<<<< HEAD:approvers/viewAllOrders.php
+=======
+    require_once('../login/adminSession.php');
+    
+>>>>>>> 5c791881d085894a34ebeda2da039c151f747517:admin/viewAllOrders.php
     require_once('../db.php');
     $db = new DBConnection;
     $conn = $db->conn;
