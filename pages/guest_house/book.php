@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Order</title>
-    <link rel="stylesheet" href="./css/book.css">
-    <link rel="stylesheet" href="../components/css/navbar.css">
+    <link rel="stylesheet" href="../css/book.css">
+    <link rel="stylesheet" href="../../components/css/navbar.css">
 </head>
 
 <body>
@@ -15,9 +15,9 @@
         <?php 
         
         
-        require_once('../login/session.php');
-            include('../components/navbar.php');
-            include('../db.php');
+        require_once('../../login/session.php');
+            include('../../components/navbar.php');
+            include('../../db.php');
             $db = new DBConnection;
             $conn = $db->conn;
 

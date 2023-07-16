@@ -4,39 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Order</title>
-    <link rel="stylesheet" href="./css/vieworder.css">
-    <link rel="stylesheet" href="../components/css/navbar.css">
+    <link rel="stylesheet" href="../css/vieworder.css">
+    <link rel="stylesheet" href="../../components/css/navbar.css">
 </head>
 <body>
     <?php 
-    require_once('../login/session.php');
-    require_once('../db.php');
+     require_once('../../login/session.php');
+    require_once('../../db.php');
     $db = new DBConnection;
     $conn = $db->conn;
     ?>
     <div class="main">
     <?php 
-    include ('../components/navbar.php');
+    include ('../../components/navbar.php');
     ?>
     <div class="container">
-        <h2>Your Canteen Event Orders</h2>
+        <h2>Cancel Canteen Event Orders</h2>
 
         <table class="orders">
             <tr class="table-heading">
                 <th>Order Id</th>
-                <th>Package</th>
+                <th>Order Type</th>
                 <th>Order Date</th>
-                <th>Event Date</th>
-                <th>Event Type</th>
+                <th>Delivery Date</th>
+                
+                
+                <th>Delivery Time</th>
                 <th>Person Count</th>
-                <th>Order Total</th>
-                <th>Event Time</th>
-                <th>Status</th>
-                <th>Remark</th>
+                
+                <th>Operation</th>
+
             </tr>
-            
+            <button></button>
             <?php
-            $sql = "select o_id, o_pack, o_date, eve_date, eve_type, person_count, o_total, eve_time,o_status, o_remark from orders where uid='".$_SESSION['pb_no']."';";
+            $sql =  "select o_id, o_type, o_date, eve_date, person_count,  eve_time,o_status, o_remark from orders where uid='".$_SESSION['pb_no']."' and o_type = 'canteen';";
             $result = mysqli_query($conn , $sql);
             $num = mysqli_num_rows($result);
             if($num>0){
@@ -44,20 +45,21 @@
                     echo "
                     <tr class='table-data-group'>
                     <td class='table-data'>".$row['o_id']."</td>
-                    <td class='table-data'>".$row['o_pack']."</td>
-                    <td class='table-data'>".$row['o_date']."</td>
+                    <td class='table-data'>".$row['o_type']."</td>
                     <td class='table-data'>".$row['eve_date']."</td>
-                    <td class='table-data'>".$row['eve_type']."</td>
+                    
                     <td class='table-data'>".$row['person_count']."</td>
-                    <td class='table-data'>".$row['o_total']."</td>
+                    
                     <td class='table-data'>".$row['eve_time']."</td>
                     <td class='table-data'>".$row['o_status']."</td>
-                    <td class='table-data'>".$row['o_remark']."</td>
+                    <td class='table-data'><a class='cancel-btn' onClick=\"javascript:return confirm('D you really want to cancel the canteen event order?');\" href='../actions/delete.php?id=".$row['o_id']."'>Cancel</a></td>
                     </tr>";
                 }
             }
+            // echo "<td><a href='delete.php?id=".$query2['id']."' onClick=\"javascript:return confirm('are you sure you want to delete this?');\">x</a></td><tr>";
             ?>
         </table>
+        
     </div>
     </div>
 </body>

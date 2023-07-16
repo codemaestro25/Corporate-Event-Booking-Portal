@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GM Approval</title>
+    <title>CoM Canteen Courtesy Approval</title>
     <link rel="stylesheet" href="./css/approver.css">
     <link rel="stylesheet" href="../components/css/approverNavbar.css">
     <link rel="stylesheet" href="./css/approveOrders.css">
 </head>
 <body>
     <?php 
+    
     session_start();
     require_once('../db.php');
     $db = new DBConnection;
@@ -22,8 +23,11 @@
         include ('../components/approverNavbar.php');
         ?>
     <div class="container">
-        General Manager
-        
+        <h3>CoM Canteen Courtesy Approval</h3>
+        <?php 
+        echo $_SESSION['role'];
+        ?>
+
         <table class="orders">
             <tr class="table-heading">
                 <th>Order Id</th>
@@ -41,7 +45,7 @@
             </tr>
             
             <?php
-            $sql = "select * from orders where hr = 'y' and gm != 'y' and o_type = 'guest_house';";
+            $sql = "select * from orders where o_status = 'placed' and o_type = 'canteen';";
             $result = mysqli_query($conn , $sql);
             $num = mysqli_num_rows($result);
             if($num>0){

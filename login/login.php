@@ -28,9 +28,16 @@
                 $emp_name = $data['emp_name'];
             }
             $_SESSION['emp_name'] = $emp_name;
+            $_SESSION['order_type'] = $_REQUEST['order_type'];
 
-            // Redirect to user dashboard page
-            header("Location: ../pages/book.php");
+            if ($_REQUEST['order_type']=="canteen") {
+                // Redirect to guesthouse order dashboard page
+                header("Location: ../pages/canteen_courtesy/book.php");
+            }
+            elseif($_REQUEST['order_type']=="guest_house"){
+                // Redirect to guesthouse order dashboard page
+                header("Location: ../pages/guest_house/book.php");
+            }
             
         } else {
             echo "<div class='form'>
@@ -45,6 +52,10 @@
         <input type="text" class="login-input" name="pb_no" placeholder="pb_no" autofocus="true" required/>
         <input type="password" class="login-input" name="password" placeholder="Password" required/>
         <input type="submit" value="Login" name="submit" class="login-button" required/>
+       
+        <input type="radio" name="order_type" id="" value="canteen" required>Canteen Courtesy
+        <input type="radio" name="order_type" id="" value="guest_house">Guest House Courtesy
+
         <p class="link"><a href="registration.php">New Registration</a></p>
         <p class="link"><a href="approverLogin.php">Approver Login</a></p>
         <p class="link"><a href="superadmin.php">SuperAdmin Login</a></p>

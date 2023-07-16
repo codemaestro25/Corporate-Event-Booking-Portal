@@ -45,7 +45,7 @@
             </tr>
             
             <?php
-            $sql = "select * from orders where o_status = 'placed';";
+            $sql = "select * from orders where o_status = 'placed' and o_type = 'guest_house';";
             $result = mysqli_query($conn , $sql);
             $num = mysqli_num_rows($result);
             if($num>0){

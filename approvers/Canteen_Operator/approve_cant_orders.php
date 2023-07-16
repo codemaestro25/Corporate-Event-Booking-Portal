@@ -2,46 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GM Approval</title>
-    <link rel="stylesheet" href="./css/approver.css">
-    <link rel="stylesheet" href="../components/css/approverNavbar.css">
-    <link rel="stylesheet" href="./css/approveOrders.css">
+    <title>View Order</title>
+    <link rel="stylesheet" href="../../pages/css/vieworder.css">
+    <link rel="stylesheet" href="../css/approveOrders.css">
+    <link rel="stylesheet" href="../css/editItems.css">
+    <link rel="stylesheet" href="../../components/css/canteenOperatorNavbar.css">
 </head>
 <body>
     <?php 
-    session_start();
-    require_once('../db.php');
+    
+    require_once('../../db.php');
     $db = new DBConnection;
     $conn = $db->conn;
     ?>
-
-<div class="main">
-    <?php
-        include ('../components/approverNavbar.php');
-        ?>
+    <div class="main">
+    <?php 
+    include ('../../components/canteenOperatorNavbar.php');
+    ?>
     <div class="container">
-        General Manager
-        
+        <h3>Canteen Operator)</h3>
+
         <table class="orders">
             <tr class="table-heading">
                 <th>Order Id</th>
                 <th>User Id</th>
                 <th>Client Name</th>
-                <th>Package</th>
-                <th>Event Date</th>
-                <th>Event Type</th>
+                <th>Order Type</th>
+                
+                <th>Delivery Date</th>
+                
                 <th>Person Count</th>
-                <th>Order Total</th>
-                <th>Event Time</th>
+                
+                <th>Delivery Time</th>
                 <th>Status</th>
-                <th>Approve</th>
-                <th>Reject</th>
+                <th>View</th>
+                
+
             </tr>
             
             <?php
-            $sql = "select * from orders where hr = 'y' and gm != 'y' and o_type = 'guest_house';";
+            $sql = "select * from orders where com = 'y' and o_type = 'canteen';";
             $result = mysqli_query($conn , $sql);
             $num = mysqli_num_rows($result);
             if($num>0){
@@ -51,16 +52,15 @@
                     <td class='table-data'>".$row['o_id']."</td>
                     <td class='table-data'>".$row['uid']."</td>
                     <td class='table-data'>".$row['u_name']."</td>
-                    <td class='table-data'>".$row['o_pack']."</td>
+                    <td class='table-data'>".$row['o_type']."</td>
                     <td class='table-data'>".$row['eve_date']."</td>
-                    <td class='table-data'>".$row['eve_type']."</td>
+                    
                     <td class='table-data'>".$row['person_count']."</td>
-                    <td class='table-data'>".$row['o_total']."</td>
+                    
                     <td class='table-data'>".$row['eve_time']."</td>
                     <td class='table-data'>".$row['o_status']."</td>
-                    <td class='table-data'><a class='approve-btn' onClick=\"javascript:return confirm('Approve the order?');\" href='./actions/approve.php?id=".$row['o_id']."'>Approve</a></td>
-                    <td class='table-data'><a class='cancel-btn' onclick=\"
-                    document.getElementById('id03').style.display='block';document.getElementById('o_id').value=".$row['o_id'].";\" >Reject</a></td>
+                    <td class='table-data'><a class='edit-btn'  href='viewOneOrder.php?id=".$row['o_id']."'>View</a></td>
+                    
                     </tr>";
                 }
             }
@@ -72,7 +72,7 @@
 
 	<div id="id03" class="modal">
 		<span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">×</span>
-		<form class="modal-content animate" method="post" action="./actions/reject.php">
+		<form class="modal-content animate" method="post" action="../../actions/reject.php">
 			<div class="container">
 
 				<label><b>Reason for rejection</b></label>

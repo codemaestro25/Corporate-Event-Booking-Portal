@@ -11,7 +11,8 @@
     <div class="navbar" >
         <h2>Booking Admin</h2>
         <ul class="menu">
-            <li class="menu-items"><a href="http://localhost/canteen/approvers/Canteen_Operator/approveOrders.php">Approve Orders</a></li>
+            <li class="menu-items"><a href="http://localhost/canteen/approvers/Canteen_Operator/approveOrders.php">Approve Guest House Orders</a></li>
+            <li class="menu-items"><a href="http://localhost/canteen/approvers/Canteen_Operator/approve_cant_orders.php">Approve Canteen Courtesy Orders</a></li>
             <li class="menu-items"><a href="http://localhost/canteen/approvers/Canteen_Operator/editPackage/packageInfo.php">Edit Packages</a></li>
             <li class="menu-items"><a href="http://localhost/canteen/approvers/Canteen_Operator/viewAllOrders.php">View All Orders</a></li>
             <li class="menu-items"><a href="http://localhost/canteen/login/logout.php">Logout</a></li>

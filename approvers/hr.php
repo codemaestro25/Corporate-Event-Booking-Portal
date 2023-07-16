@@ -43,7 +43,7 @@
             </tr>
             
             <?php
-            $sql = "select * from orders where com = 'y' and hr != 'y';";
+            $sql = "select * from orders where com = 'y' and hr != 'y' and o_type = 'guest_house';";
             $result = mysqli_query($conn , $sql);
             $num = mysqli_num_rows($result);
             if($num>0){

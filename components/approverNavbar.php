@@ -18,7 +18,17 @@
     <div class="navbar" >
         <h2>Approving Officer</h2>
         <ul class="menu">
+            <?php 
+            if($_SESSION['role']=="CoM" ){
+                ?>
+                <li class="menu-items"><a href="http://localhost/canteen/approvers/<?php echo($smallcase)?>.php?id=<?php echo($_SESSION['role'])?>">Approve Guest House Orders</a></li>
+                <li class="menu-items"><a href="http://localhost/canteen/approvers/com_cant_court.php?id=<?php echo($_SESSION['role'])?>">Approve Canteen Courtesy Orders</a></li>
+            <?php
+            }
+            else {
+            ?>
             <li class="menu-items"><a href="http://localhost/canteen/approvers/<?php echo($smallcase)?>.php?id=<?php echo($_SESSION['role'])?>">Approve Orders</a></li>
+            <?php } ?>
             <li class="menu-items"><a href="http://localhost/canteen/approvers/viewAllOrders.php">View All Orders</a></li>
             <li class="menu-items"><a href="http://localhost/canteen/login/logout.php">Logout</a></li>
         </ul>
