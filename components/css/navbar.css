@@ -6,8 +6,8 @@
     padding: 0;
 }
 .navbar{
-    width:fit-content;
-    height: 100vh;
+   width: 200px;
+    position: sticky;
     display: flex;
     flex-direction: column;
     align-items: center;

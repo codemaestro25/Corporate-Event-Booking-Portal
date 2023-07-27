@@ -30,7 +30,7 @@
             
 
             // Redirect to user dashboard page
-            header("Location: ../admin/approveOrders.php");
+            header("Location: ../superadmin/home.php");
             
         } 
         else {
@@ -46,7 +46,7 @@
         <input type="text" class="login-input" name="pb_no" placeholder="pb_no" autofocus="true" required/>
         <input type="password" class="login-input" name="password" placeholder="Password" required/>
         <input type="submit" value="Login" name="submit" class="login-button"/>
-        <p class="link"><a href="registration.php">New Registration</a></p>
+        <p class="link"><a href="login.php">User Login</a></p>
     </form>
 <?php
     }

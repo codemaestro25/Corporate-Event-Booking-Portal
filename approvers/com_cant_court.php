@@ -14,6 +14,7 @@
     
     session_start();
     require_once('../db.php');
+    require_once('../login/approverSession.php');
     $db = new DBConnection;
     $conn = $db->conn;
     ?>
@@ -25,7 +26,7 @@
     <div class="container">
         <h3>CoM Canteen Courtesy Approval</h3>
         <?php 
-        echo $_SESSION['role'];
+        echo $_SESSION['emp_name'].", " .$_SESSION['role'];
         ?>
 
         <table class="orders">
@@ -45,7 +46,7 @@
             </tr>
             
             <?php
-            $sql = "select * from orders where o_status = 'placed' and o_type = 'canteen';";
+            $sql = "select * from orders where o_status = 'placed' and o_type = 'canteen' and division = '".$_SESSION['division']."';";
             $result = mysqli_query($conn , $sql);
             $num = mysqli_num_rows($result);
             if($num>0){

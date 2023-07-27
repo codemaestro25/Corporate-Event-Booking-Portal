@@ -37,12 +37,12 @@
         ?>
         <div class="container">
             <h1 class"heading">Book New Event</h1>
-            <?php echo "<h4>Welcome ".$_SESSION['emp_name']."</h4>"?>
+            <?php echo "<h4>Welcome ".$_SESSION['emp_name'].", ".$_SESSION['division']."</h4>"?>
             <div class="form">
-                <form action="../actions/newOrder.php" method="post">
+                <form action="../../actions/newOrder.php" method="post">
                     <div class="two-element">
                         <label for="eve_date">Event Date</label>
-                        <input type="date" name="eve_date" id="" required>
+                        <input type="date" min="<?php echo date('d-m-Y')?>" name="eve_date" id="" required>
                         <br>
                         <label for="eve_time">Event Time</label>
                         <input type="time" name="eve_time" id="" required>
@@ -56,7 +56,9 @@
                         </select>
                         <br>
                         <label for="person_count">Person Count</label>
-                        <input name="person_count" id="person_count" type="text" onkeyup="calculateTotal(); " required>
+                        <input name="person_count" id="person_count" type="text"  required>
+                        <br>
+                        <h5>Note:- Courtesy request to be submitted to the Guest House at least 2 days prior to the Event</h5>
                     </div>
                     <div class="package-section">
                         <p id="fphead">Food Packages</p>

@@ -48,9 +48,12 @@
                         <input type="time" name="eve_time" id="" required>
                         <br>
 
-                        <br>
                         <label for="person_count">Person Count</label>
-                        <input name="person_count" id="person_count" type="text" onkeyup="calculateTotal(); " required>
+                        <input name="person_count" id="person_count" type="text"  required>
+                        <br>
+
+                        
+
                     </div>
                     <div class="package-section">
                         <p id="fphead">Food Packages</p>

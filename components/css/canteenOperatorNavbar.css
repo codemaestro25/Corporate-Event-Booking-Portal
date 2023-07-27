@@ -7,8 +7,9 @@
     padding: 0;
 }
 .navbar{
-    width:20%;
-    height: 100vh;
+   width: 200px;
+    
+    position: sticky;
     display: flex;
     flex-direction: column;
     align-items: center;

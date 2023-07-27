@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="navbar.css">
 </head>
 <body>
+<?php 
+    require_once('../../login/session.php'); 
+    ?>
     <div class="navbar">
         <h2>Canteen Booking</h2>
         <ul class="menu">

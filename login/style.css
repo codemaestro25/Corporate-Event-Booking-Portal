@@ -22,6 +22,11 @@ h1.login-title {
     height: 25px;
     width: calc(100% - 23px);
 }
+select{
+    width: 100%;
+    margin-bottom: 25px;
+    height: 25px;
+}
 .login-input:focus {
     border-color:#6e8095;
     outline: none;

@@ -26,8 +26,10 @@
             $_SESSION['pb_no'] = $pb_no;
             while($data = mysqli_fetch_array($result)){
                 $emp_name = $data['emp_name'];
+                $division = $data['division'];
             }
             $_SESSION['emp_name'] = $emp_name;
+            $_SESSION['division'] = $division;
             $_SESSION['order_type'] = $_REQUEST['order_type'];
 
             if ($_REQUEST['order_type']=="canteen") {
@@ -48,7 +50,7 @@
     } else {
 ?>
     <form class="form" method="post" name="login">
-        <h1 class="login-title">Login</h1>
+        <h1 class="login-title">User Login</h1>
         <input type="text" class="login-input" name="pb_no" placeholder="pb_no" autofocus="true" required/>
         <input type="password" class="login-input" name="password" placeholder="Password" required/>
         <input type="submit" value="Login" name="submit" class="login-button" required/>

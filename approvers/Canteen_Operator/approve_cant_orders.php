@@ -11,8 +11,12 @@
 </head>
 <body>
     <?php 
-    
+     if(!isset($_SESSION)) 
+     { 
+         session_start(); 
+     }
     require_once('../../db.php');
+    require_once('../../login/approverSession.php');
     $db = new DBConnection;
     $conn = $db->conn;
     ?>
@@ -21,7 +25,10 @@
     include ('../../components/canteenOperatorNavbar.php');
     ?>
     <div class="container">
-        <h3>Canteen Operator)</h3>
+        
+       <?php 
+       echo "<h3>".$_SESSION['emp_name']."- Canteen Courtesy Orders</h3>";
+       ?>
 
         <table class="orders">
             <tr class="table-heading">
@@ -42,7 +49,7 @@
             </tr>
             
             <?php
-            $sql = "select * from orders where com = 'y' and o_type = 'canteen';";
+            $sql = "select * from orders where com = 'y' and o_type = 'canteen' and cant_op = 'n';";
             $result = mysqli_query($conn , $sql);
             $num = mysqli_num_rows($result);
             if($num>0){

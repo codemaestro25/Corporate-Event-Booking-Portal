@@ -13,6 +13,7 @@
     <?php 
     session_start();
     require_once('../db.php');
+    require_once('../login/approverSession.php');
     $db = new DBConnection;
     $conn = $db->conn;
     ?>
@@ -22,8 +23,10 @@
         include ('../components/approverNavbar.php');
         ?>
     <div class="container">
-        General Manager
         
+        <?php 
+        echo $_SESSION['emp_name'].", General Manager" ;
+        ?>
         <table class="orders">
             <tr class="table-heading">
                 <th>Order Id</th>
@@ -41,7 +44,7 @@
             </tr>
             
             <?php
-            $sql = "select * from orders where hr = 'y' and gm != 'y' and o_type = 'guest_house';";
+            $sql = "select * from orders where hr = 'y' and gm != 'y' and o_type = 'guest_house' and division = '".$_SESSION['division']."';";
             $result = mysqli_query($conn , $sql);
             $num = mysqli_num_rows($result);
             if($num>0){

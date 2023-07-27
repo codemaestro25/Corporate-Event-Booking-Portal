@@ -12,6 +12,7 @@ $eve_date = $_POST["eve_date"];
 $person_count = $_POST["person_count"];
 $create_datetime = date("Y-m-d H:i:s");
 $eve_time = $_POST["eve_time"];
+$division = $_SESSION['division'];
 
 // for guest house courtesy orders
 if($_SESSION['order_type']=='guest_house'){
@@ -35,7 +36,7 @@ $o_total = $pack_cost*$person_count;
 
 // inserting the data into the table
 
-$sql = "INSERT INTO orders (uid, u_name, o_date, eve_date, eve_type, person_count, eve_time, o_pack, o_total, o_type) values('".$_SESSION['pb_no']."','".$_SESSION['emp_name']."', '".$create_datetime."', '".$eve_date."','".$eve_type."','".$person_count."','".$eve_time."','".$o_pack."','".$o_total."','".$_SESSION['order_type']."');";
+$sql = "INSERT INTO orders (uid, u_name, o_date, eve_date, eve_type, person_count, eve_time, o_pack, o_total, o_type, division) values('".$_SESSION['pb_no']."','".$_SESSION['emp_name']."', '".$create_datetime."', '".$eve_date."','".$eve_type."','".$person_count."','".$eve_time."','".$o_pack."','".$o_total."','".$_SESSION['order_type']."' , '".$division."');";
 
 
 if(mysqli_query($conn, $sql)){
@@ -54,7 +55,7 @@ elseif($_SESSION['order_type']=='canteen'){
     $itemlist = implode(',', $itemlist); // comma seperate item_id of all the optionally selected food_items
     // echo $itemlist;
 
-    $sql = "INSERT INTO orders (uid, u_name, o_date, eve_date, person_count, eve_time, o_type, item_list) values('".$_SESSION['pb_no']."','".$_SESSION['emp_name']."', '".$create_datetime."', '".$eve_date."','".$person_count."','".$eve_time."','".$_SESSION['order_type']."','".$itemlist."');";
+    $sql = "INSERT INTO orders (uid, u_name, o_date, eve_date, person_count, eve_time, o_type, item_list, division) values('".$_SESSION['pb_no']."','".$_SESSION['emp_name']."', '".$create_datetime."', '".$eve_date."','".$person_count."','".$eve_time."','".$_SESSION['order_type']."','".$itemlist."','".$division."');";
 
     if(mysqli_query($conn, $sql)){
         echo '<script>alert("Order Place Successully!")</script>';

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../pages/css/vieworder.css">
     <link rel="stylesheet" href="./css/approveOrders.css">
     <link rel="stylesheet" href="./css/editItems.css">
-    <link rel="stylesheet" href="../components/css/adminNavbar.css">
+    <link rel="stylesheet" href="../components/css/canteenOperator.css">
 </head>
 <body>
     <?php 
@@ -18,7 +18,7 @@
     ?>
     <div class="main">
     <?php 
-    include ('../components/adminNavbar.php');
+    include ('../components/canteenOperatorNavbar.php');
     ?>
     <div class="container">
         <h2>Cancel Canteen Event Orders (Admin)</h2>

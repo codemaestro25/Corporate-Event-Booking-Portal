@@ -13,6 +13,7 @@ table, th, td{
 
 }
 table{
+    overflow-y: auto;
     margin-left: 15px;
     /* margin-right: 5px; */
 }
@@ -21,10 +22,10 @@ th{
     background-color: rgb(206, 77, 60);
     color: white;
     font-size: 18px;
-    padding: 5px;
+    padding: 1px;
 }
 td{
-    padding: 5px;
+    padding: 1px;
     text-align: center;
     vertical-align: middle;
     
@@ -60,4 +61,7 @@ td{
     color: rgb(66, 97, 236);
     border: 1px  solid blueviolet;
 }
-
+h1{
+    margin: 20px auto;
+    margin-left: 10px;
+}

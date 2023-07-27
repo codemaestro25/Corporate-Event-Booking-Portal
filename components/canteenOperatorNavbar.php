@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="./css/adminNavbar.css">
 </head>
 <body>
+<?php 
+    require_once('../../login/approverSession.php'); 
+    ?>
     <div class="navbar" >
-        <h2>Booking Admin</h2>
+    <h2>Canteen Operator</h2>
         <ul class="menu">
             <li class="menu-items"><a href="http://localhost/canteen/approvers/Canteen_Operator/approveOrders.php">Approve Guest House Orders</a></li>
             <li class="menu-items"><a href="http://localhost/canteen/approvers/Canteen_Operator/approve_cant_orders.php">Approve Canteen Courtesy Orders</a></li>

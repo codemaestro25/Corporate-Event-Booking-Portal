@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./css/approverNavbar.css">
 </head>
 <body>
-    <?php 
+    <?php
+    require_once('../login/approverSession.php'); 
      if(!isset($_SESSION)) 
      { 
          session_start(); 
@@ -16,7 +17,9 @@
     $smallcase = strtolower($_SESSION['role']);
     ?>
     <div class="navbar" >
-        <h2>Approving Officer</h2>
+        <?php
+        echo "<h2>Approving Officer- ".$_SESSION['role']." </h2>";
+        ?>
         <ul class="menu">
             <?php 
             if($_SESSION['role']=="CoM" ){

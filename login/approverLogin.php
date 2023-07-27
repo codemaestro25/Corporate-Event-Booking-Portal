@@ -18,16 +18,22 @@
         $pb_no = mysqli_real_escape_string($conn, $pb_no);
         $password = stripslashes($_REQUEST['password']);
         $password = mysqli_real_escape_string($conn, $password);
-        $role = stripslashes($_REQUEST['role']);
-        $role = mysqli_real_escape_string($conn, $role);
+        // $role = stripslashes($_REQUEST['role']);
+        // $role = mysqli_real_escape_string($conn, $role);
         // Check user is exist in the database
         $query    = "SELECT * FROM `users` WHERE pb_no='$pb_no'
-                    AND password='" . md5($password) . "' AND role = '".$role."';";
+                    AND password='" . md5($password)."';";
         $result = mysqli_query($conn, $query) or die(mysql_error());
         $rows = mysqli_num_rows($result);
         if ($rows == 1) {
+            while($data = mysqli_fetch_array($result)){
+                $emp_name = $data['emp_name'];
+                $_SESSION['division'] = $data['division'];
+                $role = $data['role'];
+            }
             $_SESSION['pb_no'] = $pb_no;
             $_SESSION['role'] = $role;
+            $_SESSION['emp_name'] = $emp_name;
             
 
             // Redirect to user dashboard page
@@ -60,13 +66,13 @@
         <input type="text" class="login-input" name="pb_no" placeholder="pb_no" autofocus="true" required/>
         <input type="password" class="login-input" name="password" placeholder="Password" required/>
         <input type="submit" value="Login" name="submit" class="login-button"/>
-        <select name="role" class="role" id="role">
+        <!-- <select name="role" class="role" id="role">
             <option value="Canteen_Operator">Canteen Operator</option>
             <option value="CoM">CoM</option>
             <option value="HR">HR Head</option>
             <option value="GM">GM</option>
-        </select>
-        <p class="link"><a href="registration.php">New Registration</a></p>
+        </select> -->
+        <p class="link"><a href="login.php">User Login</a></p>
     </form>
 <?php
     }

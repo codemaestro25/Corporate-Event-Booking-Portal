@@ -43,6 +43,7 @@ label{
     margin-top: 10px;
     display: flex;
   flex-wrap: wrap; 
+  justify-content: center;
 
 }
 .pack_container{
@@ -54,6 +55,7 @@ label{
     padding-left: 10px;
     transition: 0.3s;   
     position: relative;
+    background-color: antiquewhite;
 }
 .pack_container:hover{
     scale: 1.05;

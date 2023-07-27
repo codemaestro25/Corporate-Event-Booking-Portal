@@ -21,9 +21,11 @@
         $emp_name    = mysqli_real_escape_string($conn, $emp_name);
         $password = stripslashes($_REQUEST['password']);
         $password = mysqli_real_escape_string($conn, $password);
+        $division = stripslashes($_REQUEST['division']);
+        $division = mysqli_real_escape_string($conn, $division);
         $create_datetime = date("Y-m-d H:i:s");
-        $query    = "INSERT into `users` (pb_no, password, contact_no, emp_name, create_datetime)
-                    VALUES ('$pb_no', '" . md5($password) . "', '$contact_no','$emp_name', '$create_datetime')";
+        $query    = "INSERT into `users` (pb_no, password, contact_no, emp_name, create_datetime, division)
+                    VALUES ('$pb_no', '" . md5($password) . "', '$contact_no','$emp_name', '$create_datetime', '$division')";
         $result   = mysqli_query($conn, $query);
         if ($result) {
             echo "<div class='form'>
@@ -44,6 +46,12 @@
         <input type="text" class="login-input" name="emp_name" placeholder="Full Name" required>
         <input type="text" class="login-input" name="contact_no" placeholder="Contact Number" required>
         <input type="password" class="login-input" name="password" placeholder="Password" required>
+        <select name="division" required>
+            <option value="AOD">AOD</option>
+            <option value="AMD">AMD</option>
+            <option value="AURDC">AURDC</option>
+        
+        </select>
         <input type="submit" name="submit" value="Register" class="login-button">
         <p class="link"><a href="login.php">Click to Login</a></p>
     </form>

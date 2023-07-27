@@ -14,6 +14,7 @@
     <?php 
     
     require_once('../../../db.php');
+    require_once('../../../login/approverSession.php');
     $db = new DBConnection;
     $conn = $db->conn;
     ?>

@@ -37,7 +37,7 @@
             </tr>
             
             <?php
-            $sql = "select o_id, o_pack, o_date, eve_date, eve_type, person_count, o_total, eve_time,o_status, o_remark from orders where uid='".$_SESSION['pb_no']."' and o_type = 'guest_house';";
+            $sql = "select o_id, o_pack, o_date, eve_date, eve_type, person_count, o_total, eve_time,o_status, o_remark, o_type from orders where uid='".$_SESSION['pb_no']."' and o_type = 'guest_house';";
             $result = mysqli_query($conn , $sql);
             $num = mysqli_num_rows($result);
             if($num>0){
